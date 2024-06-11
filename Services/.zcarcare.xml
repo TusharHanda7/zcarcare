@@ -1,0 +1,746 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="4.0" xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" xmlns="http://docs.oasis-open.org/odata/ns/edm">
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMUNICATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Communication.v1" Alias="Communication"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_PERSONALDATA',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.PersonalData.v1" Alias="PersonalData"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_ANALYTICS',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Analytics.v1" Alias="Analytics"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_COMMON',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="SAP__common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_MEASURES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Measures.V1" Alias="SAP__measures"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CORE',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Core.V1" Alias="SAP__core"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CAPABILITIES',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Capabilities.V1" Alias="SAP__capabilities"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_AGGREGATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Aggregation.V1" Alias="SAP__aggregation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_VALIDATION',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="Org.OData.Validation.V1" Alias="SAP__validation"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_CODELIST',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.CodeList.v1" Alias="SAP__CodeList"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_UI',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="SAP__UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Vocabularies(TechnicalName='%2FIWBEP%2FVOC_HTML5',Version='0001',SAP__Origin='LOCAL')/$value">
+        <edmx:Include Namespace="com.sap.vocabularies.HTML5.v1" Alias="SAP__HTML5"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema Namespace="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001" Alias="SAP__self">
+            <Annotation Term="SAP__core.SchemaVersion" String="1.0.0"/>
+            <EntityType Name="ZC_OFF_CARITEMType">
+                <Key>
+                    <PropertyRef Name="Site"/>
+                    <PropertyRef Name="PlateNum"/>
+                    <PropertyRef Name="PlateCode"/>
+                    <PropertyRef Name="MobileNum"/>
+                    <PropertyRef Name="CreatedOn"/>
+                    <PropertyRef Name="ItemNo"/>
+                </Key>
+                <Property Name="Site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="PlateNum" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="PlateCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="MobileNum" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreatedOn" Type="Edm.Date" Nullable="false"/>
+                <Property Name="ItemNo" Type="Edm.String" Nullable="false" MaxLength="6"/>
+                <Property Name="CreatedAt" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="Quantity" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="3"/>
+                <Property Name="Unit" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <NavigationProperty Name="_Header" Type="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZC_OFF_CARCAREType" Nullable="false" Partner="_Item"/>
+            </EntityType>
+            <EntityType Name="ZCDS_OFF_MATERIALType">
+                <Key>
+                    <PropertyRef Name="Material"/>
+                    <PropertyRef Name="Plant"/>
+                </Key>
+                <Property Name="Material" Type="Edm.String" Nullable="false" MaxLength="18"/>
+                <Property Name="Plant" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="SalesOrg" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Materialtype" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="MaterialGroup" Type="Edm.String" Nullable="false" MaxLength="9"/>
+                <Property Name="ProfitCenter" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="MaterialName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="Price" Type="Edm.Decimal" Nullable="false" Precision="11" Scale="variable"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="3"/>
+            </EntityType>
+            <EntityType Name="ZC_OFF_CARCAREType">
+                <Key>
+                    <PropertyRef Name="Site"/>
+                    <PropertyRef Name="PlateNum"/>
+                    <PropertyRef Name="PlateCode"/>
+                    <PropertyRef Name="MobileNum"/>
+                    <PropertyRef Name="CreatedOn"/>
+                </Key>
+                <Property Name="Site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="PlateNum" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="PlateCode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="MobileNum" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="CreatedOn" Type="Edm.Date" Nullable="false"/>
+                <Property Name="CreatedAt" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Model" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Manufacture" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Createdby" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Vir" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Salesorder" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Delivery" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Invoice" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Paymentdoc" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Completed" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="OfflineFlag" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="LastName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="FirstName" Type="Edm.String" Nullable="false" MaxLength="40"/>
+                <Property Name="CashAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CardAmount" Type="Edm.Decimal" Nullable="false" Precision="15" Scale="variable"/>
+                <Property Name="CardAuthCode" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Currency" Type="Edm.String" Nullable="false" MaxLength="3"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.SAP__Message)" Nullable="false"/>
+                <NavigationProperty Name="_Item" Type="Collection(com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZC_OFF_CARITEMType)" Partner="_Header">
+                    <OnDelete Action="Cascade"/>
+                </NavigationProperty>
+            </EntityType>
+            <EntityType Name="ZC_VEHICLE_DATAType">
+                <Key>
+                    <PropertyRef Name="Platecode"/>
+                    <PropertyRef Name="Platenum"/>
+                </Key>
+                <Property Name="Platecode" Type="Edm.String" Nullable="false" MaxLength="2"/>
+                <Property Name="Platenum" Type="Edm.String" Nullable="false" MaxLength="5"/>
+                <Property Name="Manufacture" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Model" Type="Edm.String" Nullable="false" MaxLength="20"/>
+                <Property Name="Partner" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="Site" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="Createdby" Type="Edm.String" Nullable="false" MaxLength="12"/>
+                <Property Name="Createdon" Type="Edm.Date"/>
+                <Property Name="Creationat" Type="Edm.TimeOfDay" Nullable="false"/>
+                <Property Name="Mobilenum" Type="Edm.String" Nullable="false" MaxLength="30"/>
+                <Property Name="SAP__Messages" Type="Collection(com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.SAP__Message)" Nullable="false"/>
+            </EntityType>
+            <ComplexType Name="SAP__Message">
+                <Property Name="code" Type="Edm.String" Nullable="false"/>
+                <Property Name="message" Type="Edm.String" Nullable="false"/>
+                <Property Name="target" Type="Edm.String"/>
+                <Property Name="additionalTargets" Type="Collection(Edm.String)" Nullable="false"/>
+                <Property Name="transition" Type="Edm.Boolean" Nullable="false"/>
+                <Property Name="numericSeverity" Type="Edm.Byte" Nullable="false"/>
+                <Property Name="longtextUrl" Type="Edm.String"/>
+            </ComplexType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="ZCDS_OFF_MATERIAL" EntityType="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZCDS_OFF_MATERIALType"/>
+                <EntitySet Name="ZC_OFF_CARCARE" EntityType="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZC_OFF_CARCAREType">
+                    <NavigationPropertyBinding Path="_Item" Target="ZC_OFF_CARITEM"/>
+                </EntitySet>
+                <EntitySet Name="ZC_OFF_CARITEM" EntityType="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZC_OFF_CARITEMType">
+                    <NavigationPropertyBinding Path="_Header" Target="ZC_OFF_CARCARE"/>
+                </EntitySet>
+                <EntitySet Name="ZC_VEHICLE_DATA" EntityType="com.sap.gateway.srvd_a2x.zsd_off_carcare.v0001.ZC_VEHICLE_DATAType"/>
+            </EntityContainer>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Site">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/PlateNum">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/PlateCode">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/MobileNum">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Telephone"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Telephone no.: dialling code+number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/CreatedOn">
+                <Annotation Term="SAP__core.Computed"/>
+                <Annotation Term="SAP__common.Label" String="Current Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="System Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/ItemNo">
+                <Annotation Term="SAP__common.IsDigitSequence"/>
+                <Annotation Term="SAP__common.Label" String="Item (SD)"/>
+                <Annotation Term="SAP__common.Heading" String="Item"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Item number of the SD document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Material">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Price">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Net Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net Value in Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Quantity">
+                <Annotation Term="SAP__measures.Unit" Path="Unit"/>
+                <Annotation Term="SAP__common.Label" String="Order Quantity"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Cumulative order quantity in sales units"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType">
+                <Annotation Term="SAP__common.Label" String="Projection View for Car Care Item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_OFF_CARITEM">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Site"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PlateNum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PlateCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MobileNum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Price"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Quantity"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.Container">
+                <Annotation Term="SAP__CodeList.CurrencyCodes">
+                    <Record>
+                        <PropertyValue Property="Url" String="../../../../default/iwbep/common/0001/$metadata"/>
+                        <PropertyValue Property="CollectionPath" String="Currencies"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__aggregation.ApplySupported">
+                    <Record>
+                        <PropertyValue Property="Transformations">
+                            <Collection>
+                                <String>
+                                    aggregate
+                                </String>
+                                <String>
+                                    groupby
+                                </String>
+                                <String>
+                                    filter
+                                </String>
+                            </Collection>
+                        </PropertyValue>
+                        <PropertyValue Property="Rollup" EnumMember="SAP__aggregation.RollupType/None"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__common.ApplyMultiUnitBehaviorForSortingAndFiltering" Bool="true"/>
+                <Annotation Term="SAP__capabilities.FilterFunctions">
+                    <Collection>
+                        <String>
+                            eq
+                        </String>
+                        <String>
+                            ne
+                        </String>
+                        <String>
+                            gt
+                        </String>
+                        <String>
+                            ge
+                        </String>
+                        <String>
+                            lt
+                        </String>
+                        <String>
+                            le
+                        </String>
+                        <String>
+                            and
+                        </String>
+                        <String>
+                            or
+                        </String>
+                        <String>
+                            contains
+                        </String>
+                        <String>
+                            startswith
+                        </String>
+                        <String>
+                            endswith
+                        </String>
+                        <String>
+                            any
+                        </String>
+                        <String>
+                            all
+                        </String>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/Material">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Material Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/Plant">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/SalesOrg">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales Organization"/>
+                <Annotation Term="SAP__common.Heading" String="SOrg."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/Materialtype">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material type"/>
+                <Annotation Term="SAP__common.Heading" String="MTyp"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/MaterialGroup">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Material Group"/>
+                <Annotation Term="SAP__common.Heading" String="Matl Group"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/ProfitCenter">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Profit Center"/>
+                <Annotation Term="SAP__common.Heading" String="Profit Ctr"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/Price">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Condition Amount"/>
+                <Annotation Term="SAP__common.Heading" String="Amount"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Condition amount or percentage where no scale exists"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType">
+                <Annotation Term="SAP__common.Label" String="CDS View for Offline Carcare Materials"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZCDS_OFF_MATERIAL">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.InsertRestrictions">
+                    <Record>
+                        <PropertyValue Property="Insertable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.DeleteRestrictions">
+                    <Record>
+                        <PropertyValue Property="Deletable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="Updatable" Bool="false"/>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Plant"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="SalesOrg"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Materialtype"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MaterialGroup"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Price"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Site">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/PlateNum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/PlateCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/MobileNum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Telephone"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Telephone no.: dialling code+number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Partner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Model">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Model"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Manufacture">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Manufacturer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Createdby">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Vir">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Notification"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Notification Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Salesorder">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Sales document"/>
+                <Annotation Term="SAP__common.Heading" String="Sales Doc."/>
+                <Annotation Term="SAP__common.QuickInfo" String="Sales Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Delivery">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Delivery"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Invoice">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Billing Document"/>
+                <Annotation Term="SAP__common.Heading" String="Bill. Doc."/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Paymentdoc">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Document Number"/>
+                <Annotation Term="SAP__common.Heading" String="DocumentNo"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Document Number of an Accounting Document"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Completed">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Indicator"/>
+                <Annotation Term="SAP__common.Heading" String="Flag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="General Flag"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/OfflineFlag">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Indicator"/>
+                <Annotation Term="SAP__common.Heading" String="Flag"/>
+                <Annotation Term="SAP__common.QuickInfo" String="General Flag"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/CashAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Net Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net Value in Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/CardAmount">
+                <Annotation Term="SAP__measures.ISOCurrency" Path="Currency"/>
+                <Annotation Term="SAP__common.Label" String="Net Value"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Net Value in Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/CardAuthCode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Reference Key 3"/>
+                <Annotation Term="SAP__common.Heading" String="Ref. Key 3"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Reference key for line item"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_OFF_CARCARE">
+                <Annotation Term="SAP__capabilities.NavigationRestrictions">
+                    <Record>
+                        <PropertyValue Property="RestrictedProperties">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="NavigationProperty" NavigationPropertyPath="_Item"/>
+                                    <PropertyValue Property="InsertRestrictions">
+                                        <Record>
+                                            <PropertyValue Property="Insertable" Bool="true"/>
+                                        </Record>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Site"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PlateNum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="PlateCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="MobileNum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Model"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Manufacture"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Createdby"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Completed"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="OfflineFlag"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CashAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CardAmount"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="CardAuthCode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType">
+                <Annotation Term="SAP__common.Label" String="Projection View for Car Care"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Platecode">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate code"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Platenum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plate number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Manufacture">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Manufacturer"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Model">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Model"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Partner">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Customer"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Customer Number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Site">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Plant"/>
+                <Annotation Term="SAP__common.Heading" String="Plnt"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Createdby">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="User Name"/>
+                <Annotation Term="SAP__common.Heading" String="User"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Mobilenum">
+                <Annotation Term="SAP__common.IsUpperCase"/>
+                <Annotation Term="SAP__common.Label" String="Telephone"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Telephone no.: dialling code+number"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType">
+                <Annotation Term="SAP__common.Label" String="Vehicle"/>
+                <Annotation Term="SAP__common.Messages" Path="SAP__Messages"/>
+            </Annotations>
+            <Annotations Target="SAP__self.Container/ZC_VEHICLE_DATA">
+                <Annotation Term="SAP__capabilities.SearchRestrictions">
+                    <Record>
+                        <PropertyValue Property="Searchable" Bool="false"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.FilterRestrictions">
+                    <Record>
+                        <PropertyValue Property="FilterExpressionRestrictions">
+                            <Collection>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Platecode"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Platenum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Manufacture"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Model"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Site"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Createdby"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                                <Record>
+                                    <PropertyValue Property="Property" PropertyPath="Mobilenum"/>
+                                    <PropertyValue Property="AllowedExpressions" String="MultiValue"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="SAP__capabilities.UpdateRestrictions">
+                    <Record>
+                        <PropertyValue Property="QueryOptions">
+                            <Record>
+                                <PropertyValue Property="SelectSupported" Bool="true"/>
+                            </Record>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/CreatedAt">
+                <Annotation Term="SAP__common.Label" String="Field of type TIMS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Currency">
+                <Annotation Term="SAP__common.Label" String="Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Crcy"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Currency Key"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARITEMType/Unit">
+                <Annotation Term="SAP__common.Label" String="Base Unit of Measure"/>
+                <Annotation Term="SAP__common.Heading" String="BUn"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/MaterialName">
+                <Annotation Term="SAP__common.Label" String="Material Description"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZCDS_OFF_MATERIALType/Currency">
+                <Annotation Term="SAP__common.Label" String="Condition Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Unit"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Condition Unit (Currency or Percentage)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/CreatedOn">
+                <Annotation Term="SAP__common.Label" String="Current Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="System Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/CreatedAt">
+                <Annotation Term="SAP__common.Label" String="Field of type TIMS"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/LastName">
+                <Annotation Term="SAP__common.Label" String="Last name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="Last name of business partner (person)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/FirstName">
+                <Annotation Term="SAP__common.Label" String="First name"/>
+                <Annotation Term="SAP__common.QuickInfo" String="First name of business partner (person)"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_OFF_CARCAREType/Currency">
+                <Annotation Term="SAP__common.Label" String="Document Currency"/>
+                <Annotation Term="SAP__common.Heading" String="Curr."/>
+                <Annotation Term="SAP__common.QuickInfo" String="SD Document Currency"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Createdon">
+                <Annotation Term="SAP__common.Label" String="Current Date"/>
+                <Annotation Term="SAP__common.Heading" String="Date"/>
+                <Annotation Term="SAP__common.QuickInfo" String="System Date"/>
+            </Annotations>
+            <Annotations Target="SAP__self.ZC_VEHICLE_DATAType/Creationat">
+                <Annotation Term="SAP__common.Label" String="Field of type TIMS"/>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,8 @@
+{
+    "_Type": "Action.Type.ApplicationUpdate",
+    "ActionResult": {
+        "_Name": "AppUpdate"
+    },
+    "OnFailure": "/zcarcare/Rules/Application/AppUpdateFailure.js",
+    "OnSuccess": "/zcarcare/Rules/Application/AppUpdateSuccess.js"
+}

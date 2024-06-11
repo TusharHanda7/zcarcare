@@ -1,0 +1,34 @@
+{
+	"_Type": "Action.Type.ODataService.CreateRelatedEntity",
+	"ActionResult": {
+		"_Name": "ODataCreateItem"
+	},
+	"OnFailure": {
+		"Name": "/zcarcare/Actions/GenericMessageBox.action",
+		"Properties": {
+			"Message": "Create Item Failed",
+			"Title": "Create Item",
+			"OKCaption": "OK"
+		}
+	},
+	"OnSuccess": "/zcarcare/Actions/CloseModalPage_Complete.action",
+	"Target": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARITEM"
+	},
+	"ParentLink": {
+		"Target": {
+			"EntitySet": "ZC_OFF_CARCARE",
+			"ReadLink": "{@odata.readLink}"
+		},
+		"Property": "_Item"
+	},
+	"Properties": {
+		"ItemNo": "#Page:CreateItem/#Control:FCCItem/#Value",
+		"Material": "#Page:CreateItem/#Control:FCCList/#SelectedValue",
+		"Price": "#Page:CreateItem/#Control:FCCPrice/#Value",
+		"Currency": "#Page:CreateItem/#Control:FCCCurrency/#Value",
+		"Quantity": "#Page:CreateItem/#Control:FCCQuantity/#Value",
+		"Unit": "#Page:CreateItem/#Control:FCCUnit/#Value"
+	}
+}

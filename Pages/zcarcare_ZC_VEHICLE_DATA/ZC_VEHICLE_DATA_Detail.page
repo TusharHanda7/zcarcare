@@ -1,0 +1,89 @@
+{
+	"Caption": "ZC_VEHICLE_DATAType Detail",
+	"DesignTimeTarget": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_VEHICLE_DATA",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{Platecode}",
+						"Subhead": "{Platenum}",
+						"BodyText": "",
+						"Footnote": "{Model}",
+						"Description": "{Manufacture}",
+						"StatusText": "{Partner}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{Site}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Platecode",
+							"Value": "{Platecode}"
+						},
+						{
+							"KeyName": "Platenum",
+							"Value": "{Platenum}"
+						},
+						{
+							"KeyName": "Manufacture",
+							"Value": "{Manufacture}"
+						},
+						{
+							"KeyName": "Model",
+							"Value": "{Model}"
+						},
+						{
+							"KeyName": "Partner",
+							"Value": "{Partner}"
+						},
+						{
+							"KeyName": "Site",
+							"Value": "{Site}"
+						},
+						{
+							"KeyName": "Createdby",
+							"Value": "{Createdby}"
+						},
+						{
+							"KeyName": "Createdon",
+							"Value": "{Createdon}"
+						},
+						{
+							"KeyName": "Creationat",
+							"Value": "{Creationat}"
+						},
+						{
+							"KeyName": "Mobilenum",
+							"Value": "{Mobilenum}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZC_VEHICLE_DATA_Detail",
+	"PrefersLargeCaption": true
+}

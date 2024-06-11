@@ -1,0 +1,67 @@
+{
+	"Caption": "ZC_OFF_CARITEM",
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{PlateCode}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/zcarcare/Actions/zcarcare/ZC_OFF_CARITEM/NavToZC_OFF_CARITEM_Detail.action",
+						"StatusImage": "",
+						"Title": "{Site}",
+						"Footnote": "{MobileNum}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{CreatedOn}",
+						"Subhead": "{PlateNum}",
+						"SubstatusText": "{ItemNo}"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "ZC_OFF_CARITEM",
+						"Service": "/zcarcare/Services/zcarcare.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZC_OFF_CARITEM_List",
+	"PrefersLargeCaption": true
+}

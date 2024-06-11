@@ -1,0 +1,11 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "navToVehicleBack"
+	},
+	"PageToOpen": "/zcarcare/Pages/ShowVehicles.page",
+	"BackStackVisible": false,
+	"ClearHistory": true,
+	"ModalPage": false,
+	"NavigationType": "Inner"
+}

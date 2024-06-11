@@ -1,0 +1,27 @@
+{
+    "Service": "/zcarcare/Services/zcarcare.service",
+    "DefiningRequests": [{
+            "Name": "ZC_OFF_CARCARE",
+            "Query": "ZC_OFF_CARCARE"
+        },
+        {
+            "Name": "ZC_OFF_CARITEM",
+            "Query": "ZC_OFF_CARITEM"
+        },
+        {
+            "Name": "ZC_VEHICLE_DATA",
+            "Query": "ZC_VEHICLE_DATA"
+        },
+        {
+            "Name": "ZCDS_OFF_MATERIAL",
+            "Query": "ZCDS_OFF_MATERIAL"
+        }
+    ],
+    "_Type": "Action.Type.ODataService.Initialize",
+    "ShowActivityIndicator": true,
+    "ActivityIndicatorText": "Downloading...",
+    "ActionResult": {
+        "_Name": "init"
+    },
+    "OnFailure": "/zcarcare/Actions/zcarcare/Service/InitializeOfflineFailureMessage.action"
+}

@@ -1,0 +1,159 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "/zcarcare/Rules/Item_number.js",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCItem",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Item",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"_Type": "Control.Type.FormCell.ListPicker",
+							"_Name": "FCCList",
+							"IsVisible": true,
+							"Separator": true,
+							"AllowMultipleSelection": false,
+							"AllowEmptySelection": true,
+							"Caption": "Choose Material",
+							"DataPaging": {
+								"ShowLoadingIndicator": false,
+								"PageSize": 50
+							},
+							"PickerPrompt": "Please select one single item",
+							"OnValueChange": "/zcarcare/Rules/MaterialSelection.js",
+							"IsSelectedSectionEnabled": false,
+							"IsPickerDismissedOnSelection": false,
+							"AllowDefaultValueIfOneItem": false,
+							"IsEditable": true,
+							"Search": {
+								"Enabled": true
+							},
+							"PickerItems": {
+								"Target": {
+									"Service": "/zcarcare/Services/zcarcare.service",
+									"EntitySet": "ZCDS_OFF_MATERIAL"
+								},
+								"DisplayValue": "{Material} {MaterialName} {Price}",
+								"ReturnValue": "{Material}"
+							}
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"DataSubscriptions": [
+								"ZCDS_OFF_MATERIAL"
+							],
+							"_Name": "FCCPrice",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Price",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"DataSubscriptions": [
+								"ZCDS_OFF_MATERIAL"
+							],
+							"_Name": "FCCPriceCopy",
+							"IsVisible": false,
+							"Separator": true,
+							"Caption": "Price",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "INR",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCCurrency",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Currency",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": false
+						},
+						{
+							"Value": "1",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCQuantity",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Quantity",
+							"PlaceHolder": "1",
+							"OnValueChange": "/zcarcare/Rules/QuantityChange.js",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "EA",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCUnit",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Unit",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": false
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CreateItem",
+	"Caption": "Create Item",
+	"PrefersLargeCaption": true,
+	"ActionBar": {
+		"Items": [
+			{
+				"_Name": "ActionBarItem0",
+				"Caption": "Item",
+				"SystemItem": "Cancel",
+				"Position": "Left",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/zcarcare/Actions/CloseModalPage_Cancel.action"
+			},
+			{
+				"_Name": "ActionBarItem1",
+				"Caption": "Item",
+				"SystemItem": "Save",
+				"Position": "Right",
+				"IsIconCircular": false,
+				"Visible": true,
+				"OnPress": "/zcarcare/Actions/ODataCreateItem.action"
+			}
+		],
+		"_Name": "ActionBar1"
+	}
+}

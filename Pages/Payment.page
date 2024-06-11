@@ -1,0 +1,138 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"KeyAndValues": [
+						{
+							"Value": "{Site}",
+							"_Name": "KeyValue0",
+							"KeyName": "Site",
+							"Visible": true
+						},
+						{
+							"Value": "{MobileNum}",
+							"_Name": "KeyValue1",
+							"KeyName": "Mobile",
+							"Visible": true
+						},
+						{
+							"Value": "{PlateCode}",
+							"_Name": "KeyValue2",
+							"KeyName": "Plate Code",
+							"Visible": true
+						},
+						{
+							"Value": "{PlateNum}",
+							"_Name": "KeyValue3",
+							"KeyName": "Plate Num",
+							"Visible": true
+						},
+						{
+							"Value": "{CreatedOn}",
+							"_Name": "KeyValue4",
+							"KeyName": "Created On",
+							"Visible": true
+						}
+					],
+					"MaxItemCount": 1,
+					"_Type": "Section.Type.KeyValue",
+					"_Name": "SectionKeyValue0",
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"Layout": {
+						"NumberOfColumns": 2
+					}
+				},
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCash",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Cash",
+							"PlaceHolder": "0",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCCard",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Card",
+							"PlaceHolder": "0",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCAuth",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Auth Code",
+							"PlaceHolder": "00000",
+							"Enabled": true,
+							"IsEditable": true
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'"
+	},
+	"_Type": "Page",
+	"_Name": "Payment",
+	"Caption": "Payment",
+	"PrefersLargeCaption": true,
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem0",
+				"Visible": true,
+				"Title": "Final Payment",
+				"OnPress": "/zcarcare/Actions/odataPayment.action",
+				"Enabled": true,
+				"ButtonType": "Text",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
+}

@@ -1,0 +1,58 @@
+{
+	"Credential": "cf",
+	"Template": {
+		"Id": "@ext-mdkvsc-npm-dev/generator-mdk",
+		"Name": "List Detail",
+		"Version": "0.0.1"
+	},
+	"CF": {
+		"Target": "https://api.cf.us10-001.hana.ondemand.com",
+		"Organization": "e8a09ce4-3971-44fb-9482-accfea70d4fa",
+		"Space": "9ba0589b-508e-49d0-9e77-d38cf4261ac5",
+		"Deploy": {
+			"Description": "",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
+			"Destination": [
+				{
+					"CF": "zcarcare",
+					"MDK": "zcarcare",
+					"URL": ""
+				}
+			],
+			"Name": "ns.zcarcare",
+			"Version": "1.0.0",
+			"AppRouter": "standalone",
+			"Auth": true,
+			"URL": "https://72973202trial-dev-nszcarcare-approuter.cfapps.us10-001.hana.ondemand.com/nszcarcare"
+		}
+	},
+	"MobileService": {
+		"Type": "standard",
+		"AdminAPI": "https://mobile-service-cockpit-api.cfapps.us10.hana.ondemand.com/cockpit/v1/org/e8a09ce4-3971-44fb-9482-accfea70d4fa/space/9ba0589b-508e-49d0-9e77-d38cf4261ac5",
+		"AppId": "zcarcare",
+		"Destination": [
+			"zcarcare"
+		]
+	},
+	"Onboarding": {
+		"Schema": "sapmobilesvcs",
+		"TimeZone": "UTC",
+		"URL": "sapmobilesvcs://?AppId=zcarcare&ClientId=a4237a8c-99f2-430f-adfb-a6e3c2f1e279&SapCloudPlatformEndpoint=https://72973202trial-dev-zcarcare.cfapps.us10-001.hana.ondemand.com&AuthorizationEndpointUrl=https://72973202trial-dev-zcarcare.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/authorize&RedirectUrl=https://72973202trial-dev-zcarcare.cfapps.us10-001.hana.ondemand.com&TokenUrl=https://72973202trial-dev-zcarcare.cfapps.us10-001.hana.ondemand.com/oauth2/api/v1/token"
+	},
+	"LCAP": {
+		"FullName": "",
+		"Service": [],
+		"sourceTemplate": {
+			"id": "html5moduletemplates.basicSAPUI5ApplicationProjectModule",
+			"version": "1.40.12"
+		}
+	},
+	"Build": {
+		"SourceMap": true,
+		"TSTarget": "es6",
+		"WMF": true
+	}
+}

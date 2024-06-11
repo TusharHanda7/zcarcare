@@ -1,0 +1,9 @@
+{
+    "Service": "/zcarcare/Services/zcarcare.service",
+    "_Type": "Action.Type.OfflineOData.Upload",
+    "ActionResult": {
+        "_Name": "sync"
+    },
+    "OnSuccess": "/zcarcare/Actions/zcarcare/Service/DownloadStartedMessage.action",
+    "OnFailure": "/zcarcare/Actions/zcarcare/Service/SyncFailureMessage.action"
+}

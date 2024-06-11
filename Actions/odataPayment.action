@@ -1,0 +1,26 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "odataPayment"
+	},
+	"OnFailure": {
+		"Name": "/zcarcare/Actions/GenericMessageBox.action",
+		"Properties": {
+			"Message": "Payment failed",
+			"Title": "Payment failed",
+			"OKCaption": "OK"
+		}
+	},
+	"OnSuccess": "/zcarcare/Actions/navToMain.action",
+	"Target": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"CashAmount": "#Page:Payment/#Control:FCCash/#Value",
+		"CardAmount": "#Page:Payment/#Control:FCCard/#Value",
+		"CardAuthCode": "#Page:Payment/#Control:FCAuth/#Value",
+		"Currency": "INR"
+	}
+}

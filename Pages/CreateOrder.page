@@ -1,0 +1,116 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable0",
+			"Sections": [
+				{
+					"Separators": {
+						"TopSectionSeparator": false,
+						"BottomSectionSeparator": true,
+						"HeaderSeparator": true,
+						"FooterSeparator": true,
+						"ControlSeparator": true
+					},
+					"Controls": [
+						{
+							"Value": "AB01",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCSite",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Site",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{Platecode}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCPlateCode",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Plate Code",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{Platenum}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCPlateNum",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Plate Num",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "{Mobilenum}",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCMobile",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Mobile",
+							"PlaceHolder": "PlaceHolder",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCName",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Name",
+							"PlaceHolder": "Enter Cutsomer Name",
+							"Enabled": true,
+							"IsEditable": true
+						},
+						{
+							"Value": "2024-06-05T16:54:57",
+							"_Type": "Control.Type.FormCell.DatePicker",
+							"_Name": "FCDate",
+							"IsVisible": true,
+							"Separator": true,
+							"Caption": "Order Creation Date",
+							"IsEditable": false,
+							"Mode": "Date"
+						}
+					],
+					"Visible": true,
+					"EmptySection": {
+						"FooterVisible": false
+					},
+					"_Type": "Section.Type.FormCell",
+					"_Name": "SectionFormCell0"
+				}
+			]
+		}
+	],
+	"_Type": "Page",
+	"_Name": "CreateOrder",
+	"Caption": "CreateOrder",
+	"PrefersLargeCaption": true,
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem0",
+				"Visible": true,
+				"Title": "Proceed",
+				"OnPress": "/zcarcare/Actions/odataCreateOrder.action",
+				"Enabled": true,
+				"ButtonType": "Text",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
+}

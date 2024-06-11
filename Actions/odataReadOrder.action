@@ -1,0 +1,20 @@
+{
+	"_Type": "Action.Type.ODataService.Read",
+	"ActionResult": {
+		"_Name": "odataReadOrder"
+	},
+	"OnSuccess": "/zcarcare/Actions/navToOrderDetails.action",
+	"Target": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'"
+	},
+	"Properties": [
+		"Site",
+		"PlateNum",
+		"PlateCode",
+		"MobileNum",
+		"CreatedOn",
+		"FirstName"
+	]
+}

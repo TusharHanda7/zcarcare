@@ -1,0 +1,67 @@
+{
+	"Caption": "ZC_VEHICLE_DATA",
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"Header": {
+						"UseTopPadding": false
+					},
+					"ObjectCell": {
+						"AccessoryType": "DisclosureIndicator",
+						"Description": "{Manufacture}",
+						"AvatarStack": {
+							"Avatars": [
+								{
+									"Image": ""
+								}
+							],
+							"ImageIsCircular": false
+						},
+						"Icons": [],
+						"OnPress": "/zcarcare/Actions/zcarcare/ZC_VEHICLE_DATA/NavToZC_VEHICLE_DATA_Detail.action",
+						"StatusImage": "",
+						"Title": "{Platecode}",
+						"Footnote": "{Model}",
+						"PreserveIconStackSpacing": false,
+						"StatusText": "{Partner}",
+						"Subhead": "{Platenum}",
+						"SubstatusText": "{Site}"
+					},
+					"EmptySection": {
+						"Caption": "No record found!"
+					},
+					"Search": {
+						"Enabled": true,
+						"Placeholder": "Item Search",
+						"BarcodeScanner": true,
+						"Delay": 500,
+						"MinimumCharacterThreshold": 3
+					},
+					"DataPaging": {
+						"ShowLoadingIndicator": true,
+						"LoadingIndicatorText": "Loading more items, please wait..."
+					},
+					"Target": {
+						"EntitySet": "ZC_VEHICLE_DATA",
+						"Service": "/zcarcare/Services/zcarcare.service",
+						"QueryOptions": ""
+					},
+					"_Type": "Section.Type.ObjectTable"
+				}
+			],
+			"LoadingIndicator": {
+				"Enabled": true,
+				"Text": "Loading, please wait..."
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZC_VEHICLE_DATA_List",
+	"PrefersLargeCaption": true
+}

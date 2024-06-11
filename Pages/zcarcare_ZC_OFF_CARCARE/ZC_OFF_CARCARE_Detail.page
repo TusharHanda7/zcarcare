@@ -1,0 +1,141 @@
+{
+	"Caption": "ZC_OFF_CARCAREType Detail",
+	"DesignTimeTarget": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{LastName}",
+						"Subhead": "{Site}",
+						"BodyText": "",
+						"Footnote": "{PlateCode}",
+						"Description": "{PlateNum}",
+						"StatusText": "{MobileNum}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{CreatedOn}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Site",
+							"Value": "{Site}"
+						},
+						{
+							"KeyName": "PlateNum",
+							"Value": "{PlateNum}"
+						},
+						{
+							"KeyName": "PlateCode",
+							"Value": "{PlateCode}"
+						},
+						{
+							"KeyName": "MobileNum",
+							"Value": "{MobileNum}"
+						},
+						{
+							"KeyName": "CreatedOn",
+							"Value": "{CreatedOn}"
+						},
+						{
+							"KeyName": "CreatedAt",
+							"Value": "{CreatedAt}"
+						},
+						{
+							"KeyName": "Partner",
+							"Value": "{Partner}"
+						},
+						{
+							"KeyName": "Model",
+							"Value": "{Model}"
+						},
+						{
+							"KeyName": "Manufacture",
+							"Value": "{Manufacture}"
+						},
+						{
+							"KeyName": "Createdby",
+							"Value": "{Createdby}"
+						},
+						{
+							"KeyName": "Vir",
+							"Value": "{Vir}"
+						},
+						{
+							"KeyName": "Salesorder",
+							"Value": "{Salesorder}"
+						},
+						{
+							"KeyName": "Delivery",
+							"Value": "{Delivery}"
+						},
+						{
+							"KeyName": "Invoice",
+							"Value": "{Invoice}"
+						},
+						{
+							"KeyName": "Paymentdoc",
+							"Value": "{Paymentdoc}"
+						},
+						{
+							"KeyName": "Completed",
+							"Value": "{Completed}"
+						},
+						{
+							"KeyName": "OfflineFlag",
+							"Value": "{OfflineFlag}"
+						},
+						{
+							"KeyName": "LastName",
+							"Value": "{LastName}"
+						},
+						{
+							"KeyName": "FirstName",
+							"Value": "{FirstName}"
+						},
+						{
+							"KeyName": "CashAmount",
+							"Value": "{CashAmount}"
+						},
+						{
+							"KeyName": "CardAmount",
+							"Value": "{CardAmount}"
+						},
+						{
+							"KeyName": "CardAuthCode",
+							"Value": "{CardAuthCode}"
+						},
+						{
+							"KeyName": "Currency",
+							"Value": "{Currency}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZC_OFF_CARCARE_Detail",
+	"PrefersLargeCaption": true
+}

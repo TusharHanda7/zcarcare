@@ -1,0 +1,85 @@
+{
+	"Caption": "ZCDS_OFF_MATERIALType Detail",
+	"DesignTimeTarget": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZCDS_OFF_MATERIAL",
+		"QueryOptions": ""
+	},
+	"ActionBar": {
+		"Items": []
+	},
+	"Controls": [
+		{
+			"Sections": [
+				{
+					"ObjectHeader": {
+						"Tags": [],
+						"DetailImage": "",
+						"HeadlineText": "{MaterialName}",
+						"Subhead": "{Material}",
+						"BodyText": "",
+						"Footnote": "{SalesOrg}",
+						"Description": "{Plant}",
+						"StatusText": "{Materialtype}",
+						"StatusImage": "",
+						"SubstatusImage": "",
+						"SubstatusText": "{MaterialGroup}"
+					},
+					"_Type": "Section.Type.ObjectHeader"
+				},
+				{
+					"KeyAndValues": [
+						{
+							"KeyName": "Material",
+							"Value": "{Material}"
+						},
+						{
+							"KeyName": "Plant",
+							"Value": "{Plant}"
+						},
+						{
+							"KeyName": "SalesOrg",
+							"Value": "{SalesOrg}"
+						},
+						{
+							"KeyName": "Materialtype",
+							"Value": "{Materialtype}"
+						},
+						{
+							"KeyName": "MaterialGroup",
+							"Value": "{MaterialGroup}"
+						},
+						{
+							"KeyName": "ProfitCenter",
+							"Value": "{ProfitCenter}"
+						},
+						{
+							"KeyName": "MaterialName",
+							"Value": "{MaterialName}"
+						},
+						{
+							"KeyName": "Price",
+							"Value": "{Price}"
+						},
+						{
+							"KeyName": "Currency",
+							"Value": "{Currency}"
+						}
+					],
+					"Layout": {
+						"NumberOfColumns": 2
+					},
+					"MaxItemCount": 1,
+					"_Name": "SectionKeyValue0",
+					"_Type": "Section.Type.KeyValue"
+				}
+			],
+			"DataSubscriptions": [],
+			"_Type": "Control.Type.SectionedTable",
+			"_Name": "SectionedTable"
+		}
+	],
+	"_Type": "Page",
+	"_Name": "ZCDS_OFF_MATERIAL_Detail",
+	"PrefersLargeCaption": true
+}

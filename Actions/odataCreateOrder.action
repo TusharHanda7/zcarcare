@@ -1,0 +1,27 @@
+{
+	"_Type": "Action.Type.ODataService.CreateEntity",
+	"ActionResult": {
+		"_Name": "odataCreateOrder"
+	},
+	"OnFailure": {
+		"Name": "/zcarcare/Actions/GenericMessageBox.action",
+		"Properties": {
+			"Message": "Create order failed",
+			"Title": "Create order",
+			"OKCaption": "OK"
+		}
+	},
+	"OnSuccess": "/zcarcare/Actions/navToDisplayWash.action",
+	"Target": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE"
+	},
+	"Properties": {
+		"Site": "#Page:CreateOrder/#Control:FCSite/#Value",
+		"PlateNum": "#Page:CreateOrder/#Control:FCPlateNum/#Value",
+		"PlateCode": "#Page:CreateOrder/#Control:FCPlateCode/#Value",
+		"MobileNum": "#Page:CreateOrder/#Control:FCMobile/#Value",
+		"CreatedOn": "#Page:CreateOrder/#Control:FCDate/#Value",
+		"FirstName": "#Page:CreateOrder/#Control:FCName/#Value"
+	}
+}
