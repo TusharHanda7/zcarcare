@@ -1,0 +1,9 @@
+{
+	"_Type": "Action.Type.Navigation",
+	"ActionResult": {
+		"_Name": "navToDisplayWashTab"
+	},
+	"PageToOpen": "/zcarcare/Pages/DisplayWashTab.page",
+	"BackStackVisible": false,
+	"ClearHistory": true
+}

@@ -130,7 +130,7 @@
 		}
 	],
 	"_Type": "Page",
-	"_Name": "CreateItem",
+	"_Name": "CreateItemCopy",
 	"Caption": "Create Item",
 	"PrefersLargeCaption": true,
 	"ActionBar": {
@@ -151,7 +151,7 @@
 				"Position": "Right",
 				"IsIconCircular": false,
 				"Visible": true,
-				"OnPress": "/zcarcare/Actions/ODataCreateItem.action"
+				"OnPress": "/zcarcare/Actions/odataCreateItemCopy.action"
 			}
 		],
 		"_Name": "ActionBar1"

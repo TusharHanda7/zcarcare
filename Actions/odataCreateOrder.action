@@ -11,7 +11,7 @@
 			"OKCaption": "OK"
 		}
 	},
-	"OnSuccess": "/zcarcare/Actions/navToDisplayWash.action",
+	"OnSuccess": "/zcarcare/Actions/navToDisplayWashTab.action",
 	"Target": {
 		"Service": "/zcarcare/Services/zcarcare.service",
 		"EntitySet": "ZC_OFF_CARCARE"
