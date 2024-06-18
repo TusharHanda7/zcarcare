@@ -1,0 +1,99 @@
+{
+	"Controls": [
+		{
+			"FilterFeedbackBar": {
+				"ShowAllFilters": false,
+				"_Type": "Control.Type.FilterFeedbackBar"
+			},
+			"Section": {
+				"Separators": {
+					"TopSectionSeparator": false,
+					"BottomSectionSeparator": true,
+					"HeaderSeparator": true,
+					"FooterSeparator": true,
+					"ControlSeparator": true
+				},
+				"Controls": [
+					{
+						"Value": "{Site}",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPSite",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Site",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"Value": "{PlateCode}",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPPlateCode",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "PlateCode",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"Value": "{PlateNum}",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPPlateNum",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "PlateNum",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"Value": "{MobileNum}",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPMobile",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Mobile",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"Value": "{CreatedOn}",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPDate",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Date",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": true
+					}
+				],
+				"Visible": true,
+				"EmptySection": {
+					"FooterVisible": false
+				},
+				"_Type": "Section.Type.FormCell",
+				"_Name": "SectionFormCell0"
+			},
+			"_Type": "Control.Type.SectionedTable",
+			"Target": {
+				"Service": "/zcarcare/Services/zcarcare.service",
+				"EntitySet": "ZC_OFF_CARCARE",
+				"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'",
+				"ReadLink": "{@odata.readLink}"
+			},
+			"_Name": "SectionedTable0"
+		}
+	],
+	"DesignTimeTarget": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'"
+	},
+	"_Type": "Page",
+	"_Name": "PaymentCopy",
+	"Caption": "PaymentCopy",
+	"PrefersLargeCaption": true
+}

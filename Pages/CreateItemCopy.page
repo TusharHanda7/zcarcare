@@ -41,7 +41,7 @@
 								"PageSize": 50
 							},
 							"PickerPrompt": "Please select one single item",
-							"OnValueChange": "/zcarcare/Rules/MaterialSelection.js",
+							"OnValueChange": "/zcarcare/Rules/MaterialSelectionCopy.js",
 							"IsSelectedSectionEnabled": false,
 							"IsPickerDismissedOnSelection": false,
 							"AllowDefaultValueIfOneItem": false,
@@ -103,7 +103,7 @@
 							"Separator": true,
 							"Caption": "Quantity",
 							"PlaceHolder": "1",
-							"OnValueChange": "/zcarcare/Rules/QuantityChange.js",
+							"OnValueChange": "/zcarcare/Rules/QuantityChangeCopy.js",
 							"Enabled": true,
 							"IsEditable": true
 						},

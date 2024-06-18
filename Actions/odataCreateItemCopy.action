@@ -25,6 +25,10 @@
 	},
 	"Properties": {
 		"ItemNo": "#Page:CreateItemCopy/#Control:FCCItem/#Value",
-		"Material": "#Page:CreateItemCopy/#Control:FCCList/#SelectedValue"
+		"Material": "#Page:CreateItemCopy/#Control:FCCList/#SelectedValue",
+		"Price": "#Page:CreateItemCopy/#Control:FCCPrice/#Value",
+		"Currency": "#Page:CreateItemCopy/#Control:FCCCurrency/#Value",
+		"Quantity": "#Page:CreateItemCopy/#Control:FCCQuantity/#Value",
+		"Unit": "#Page:CreateItemCopy/#Control:FCCUnit/#Value"
 	}
 }

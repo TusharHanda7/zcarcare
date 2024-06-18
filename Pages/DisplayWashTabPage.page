@@ -79,6 +79,15 @@
 						"UseTopPadding": true,
 						"Caption": "Selected Materials"
 					},
+					"Footer": {
+						"_Name": "SectionFooter0",
+						"Caption": "See All",
+						"AttributeLabel": "/zcarcare/Rules/TotalPrice.js",
+						"AccessoryType": "DisclosureIndicator",
+						"FooterStyle": "Attribute",
+						"Visible": true,
+						"UseBottomPadding": false
+					},
 					"_Type": "Section.Type.ObjectTable",
 					"DataSubscriptions": [
 						"ZC_OFF_CARITEM"
@@ -108,7 +117,6 @@
 						"StatusText": "{ItemNo}",
 						"PreserveIconStackSpacing": false,
 						"AccessoryType": "None",
-						"ProgressIndicator": "InProgress",
 						"Tags": [],
 						"AvatarStack": {
 							"Avatars": [],

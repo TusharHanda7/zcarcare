@@ -6,8 +6,17 @@ export default function Item_number(clientAPI) {
     var ItemNo = 10;
     let desiredLength = 6;
     let ItemNoZeroes = ItemNo.toString().padStart(desiredLength, '0');
-    const currentPlateNum = clientAPI.getPageProxy().binding['@odata.readLink'];
-    return clientAPI.read('/zcarcare/Services/zcarcare.service', currentPlateNum + '/_Item', []).then(function (results) {
+    //var FCSite2 = clientAPI.evaluateTargetPath('#Page:DisplayWashTabPage/#Control:SectionKeyValue0');
+    //var FCSite2 = clientAPI.evaluateTargetPath('#Page:-Previous');
+    var FCSite = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPSite/#Value');
+    var FCPlateCode = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPPlateCode/#Value');
+    var FCPlateNum = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPPlateNum/#Value');
+    var FCMobile = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPMobile/#Value');
+    var FCDate = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPDate/#Value');
+    var FCKey = `ZC_OFF_CARCARE(Site='${FCSite}',PlateNum='${FCPlateNum}',PlateCode='${FCPlateCode}',MobileNum='${FCMobile}',CreatedOn=${FCDate})`;;
+    //const currentPlateNum = pageproxy.binding['@odata.readLink'];
+    //const currentPlateNum = 'Site='
+    return clientAPI.read('/zcarcare/Services/zcarcare.service', FCKey + '/_Item', []).then(function (results) {
         let data = results._array;
         if(data.length == 0 ){
             ItemNoZeroes = ItemNo.toString().padStart(desiredLength, '0');

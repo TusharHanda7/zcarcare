@@ -16,6 +16,10 @@
 						"FooterSeparator": true,
 						"ControlSeparator": true
 					},
+					"Layout": {
+						"LayoutType": "Vertical",
+						"HorizontalAlignment": "Leading"
+					},
 					"_Type": "Section.Type.ButtonTable",
 					"_Name": "SectionButtonTable_zcarcare",
 					"Header": {
@@ -90,11 +94,7 @@
 							"Enabled": true,
 							"OnPress": "/zcarcare/Actions/zcarcare/ZCDS_OFF_MATERIAL/NavToZCDS_OFF_MATERIAL_List.action"
 						}
-					],
-					"Layout": {
-						"LayoutType": "Vertical",
-						"HorizontalAlignment": "Leading"
-					}
+					]
 				}
 			]
 		}
