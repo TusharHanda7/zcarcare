@@ -4,6 +4,7 @@
 		"_Name": "navToMain"
 	},
 	"PageToOpen": "/zcarcare/Pages/Main.page",
+	"BackStackVisible": false,
 	"ClearHistory": true,
-	"NavigationType": "Inner"
+	"NavigationType": "Outer"
 }

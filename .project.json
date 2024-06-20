@@ -10,11 +10,6 @@
 		"Organization": "e8a09ce4-3971-44fb-9482-accfea70d4fa",
 		"Space": "9ba0589b-508e-49d0-9e77-d38cf4261ac5",
 		"Deploy": {
-			"Description": "",
-			"WebClient": {
-				"Runtime": "production",
-				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
-			},
 			"Destination": [
 				{
 					"CF": "zcarcare",
@@ -25,6 +20,10 @@
 			"Name": "ns.zcarcare",
 			"Version": "1.0.0",
 			"AppRouter": "standalone",
+			"WebClient": {
+				"Runtime": "production",
+				"URL": "https://mdk-webclient-runtime.cfapps.us10.hana.ondemand.com/runtime/"
+			},
 			"Auth": true,
 			"URL": "https://72973202trial-dev-nszcarcare-approuter.cfapps.us10-001.hana.ondemand.com/nszcarcare"
 		}

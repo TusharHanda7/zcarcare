@@ -13,7 +13,7 @@
 				{
 					"_Type": "Control.Type.TabItem",
 					"Caption": "Payment",
-					"PageToOpen": "/zcarcare/Pages/PaymentCopy.page",
+					"PageToOpen": "/zcarcare/Pages/Payment.page",
 					"_Name": "TabItem1"
 				}
 			],

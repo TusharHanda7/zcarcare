@@ -72,14 +72,26 @@
 							"IsEditable": true
 						},
 						{
-							"Value": "2024-06-05T16:54:57",
+							"Value": "/zcarcare/Rules/CurrentDate.js",
 							"_Type": "Control.Type.FormCell.DatePicker",
 							"_Name": "FCDate",
 							"IsVisible": true,
 							"Separator": true,
-							"Caption": "Order Creation Date",
+							"Caption": "Date",
 							"IsEditable": false,
-							"Mode": "Date"
+							"Mode": "Datetime"
+						},
+						{
+							"Value": "#Page:CreateOrder/#Control:FCDate/#Value",
+							"_Type": "Control.Type.FormCell.SimpleProperty",
+							"_Name": "FCDate2",
+							"IsVisible": true,
+							"Separator": false,
+							"Caption": "Date",
+							"PlaceHolder": "PlaceHolder",
+							"KeyboardType": "DateTime",
+							"Enabled": true,
+							"IsEditable": false
 						}
 					],
 					"Visible": true,

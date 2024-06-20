@@ -11,11 +11,19 @@
 			"OKCaption": "OK"
 		}
 	},
-	"OnSuccess": "/zcarcare/Actions/navToMain.action",
+	"OnSuccess": {
+		"Name": "/zcarcare/Actions/GenericMessageBox.action",
+		"Properties": {
+			"OnSuccess": "/zcarcare/Actions/navToMain.action",
+			"Message": "Payment completed successfully",
+			"Title": "Payment",
+			"OKCaption": "OK"
+		}
+	},
 	"Target": {
 		"Service": "/zcarcare/Services/zcarcare.service",
 		"EntitySet": "ZC_OFF_CARCARE",
-		"ReadLink": "{@odata.readLink}"
+		"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js"
 	},
 	"Properties": {
 		"CashAmount": "#Page:Payment/#Control:FCCash/#Value",

@@ -53,7 +53,7 @@
 					"Target": {
 						"Service": "/zcarcare/Services/zcarcare.service",
 						"EntitySet": "ZC_OFF_CARCARE",
-						"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'",
+						"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js",
 						"ReadLink": "{@odata.readLink}"
 					},
 					"_Name": "SectionKeyValue0",
@@ -81,7 +81,7 @@
 					},
 					"Footer": {
 						"_Name": "SectionFooter0",
-						"Caption": "See All",
+						"Caption": "Total Price",
 						"AttributeLabel": "/zcarcare/Rules/TotalPrice.js",
 						"AccessoryType": "DisclosureIndicator",
 						"FooterStyle": "Attribute",
@@ -95,7 +95,7 @@
 					"Target": {
 						"Service": "/zcarcare/Services/zcarcare.service",
 						"EntitySet": "ZC_OFF_CARITEM",
-						"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'",
+						"QueryOptions": "/zcarcare/Rules/ReadItemQuery.js",
 						"ReadLink": "{@odata.readLink}"
 					},
 					"_Name": "SectionObjectTable0",
@@ -149,7 +149,7 @@
 	"DesignTimeTarget": {
 		"Service": "/zcarcare/Services/zcarcare.service",
 		"EntitySet": "ZC_OFF_CARCARE",
-		"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'"
+		"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js"
 	},
 	"_Type": "Page",
 	"_Name": "DisplayWashTabPage",

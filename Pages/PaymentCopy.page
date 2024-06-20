@@ -68,6 +68,49 @@
 						"PlaceHolder": "PlaceHolder",
 						"Enabled": true,
 						"IsEditable": true
+					},
+					{
+						"Value": "/zcarcare/Rules/PaymentPrice.js",
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPTotalPrice",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Total Price",
+						"PlaceHolder": "PlaceHolder",
+						"Enabled": true,
+						"IsEditable": false
+					},
+					{
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPCash",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Cash",
+						"PlaceHolder": "0",
+						"KeyboardType": "Number",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPCard",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Card",
+						"PlaceHolder": "0",
+						"Enabled": true,
+						"IsEditable": true
+					},
+					{
+						"_Type": "Control.Type.FormCell.SimpleProperty",
+						"_Name": "FCPAuthCode",
+						"IsVisible": true,
+						"Separator": true,
+						"Caption": "Auth Code",
+						"PlaceHolder": "00000",
+						"KeyboardType": "Number",
+						"Enabled": true,
+						"IsEditable": true
 					}
 				],
 				"Visible": true,
@@ -81,7 +124,7 @@
 			"Target": {
 				"Service": "/zcarcare/Services/zcarcare.service",
 				"EntitySet": "ZC_OFF_CARCARE",
-				"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'",
+				"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js",
 				"ReadLink": "{@odata.readLink}"
 			},
 			"_Name": "SectionedTable0"
@@ -90,10 +133,27 @@
 	"DesignTimeTarget": {
 		"Service": "/zcarcare/Services/zcarcare.service",
 		"EntitySet": "ZC_OFF_CARCARE",
-		"QueryOptions": "$filter=Site eq '{{#Page:CreateOrder/#Control:FCSite/#Value}}' and PlateCode eq '{{#Page:CreateOrder/#Control:FCPlateCode/#Value}}' and PlateNum eq '{{#Page:CreateOrder/#Control:FCPlateNum/#Value}}' and MobileNum eq '{{#Page:CreateOrder/#Control:FCMobile/#Value}}'"
+		"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js"
 	},
 	"_Type": "Page",
 	"_Name": "PaymentCopy",
 	"Caption": "PaymentCopy",
-	"PrefersLargeCaption": true
+	"PrefersLargeCaption": true,
+	"FioriToolbar": {
+		"_Type": "Control.Type.FioriToolbar",
+		"_Name": "FioriToolbar0",
+		"Items": [
+			{
+				"_Type": "FioriToolbarItem.Type.Button",
+				"_Name": "ToolbarItem0",
+				"Visible": true,
+				"Title": "Final Payment",
+				"OnPress": "/zcarcare/Actions/odataPaymentCopy.action",
+				"Enabled": true,
+				"ButtonType": "Text",
+				"Semantic": "Tint",
+				"ImagePosition": "Leading"
+			}
+		]
+	}
 }

@@ -2,12 +2,12 @@
  * Describe this function...
  * @param {IClientAPI} clientAPI
  */
-export default function TotalPrice(clientAPI) {
+export default function PaymentPrice(clientAPI) {
     var FCSite = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCSite/#Value');
     var FCPlateCode = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCPlateCode/#Value');
     var FCPlateNum = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCPlateNum/#Value');
     var FCMobile = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCMobile/#Value');
-    var FCDate = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCDate/#Value');
+    var FCDate = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCDate/#Value');;
     var FCDate = FCDate.toLocaleDateString("fr-CA", {year:"numeric", month: "2-digit", day:"2-digit"});
     var FCKey = `ZC_OFF_CARCARE(Site='${FCSite}',PlateNum='${FCPlateNum}',PlateCode='${FCPlateCode}',MobileNum='${FCMobile}',CreatedOn=${FCDate})`;
     
@@ -18,8 +18,6 @@ export default function TotalPrice(clientAPI) {
         for (let i = 0; i < data.length; i++) {
             totalPrice = data[i].Price + totalPrice;
         }
-        var currency = data[0].Currency;
-        var ReturnText = "Total Price : " + totalPrice + " " + currency;
-        return ReturnText;
+        return totalPrice;
     });
 }

@@ -46,10 +46,21 @@
 							"_Name": "KeyValue4",
 							"KeyName": "Created On",
 							"Visible": true
+						},
+						{
+							"Value": "/zcarcare/Rules/PaymentPrice.js",
+							"_Name": "KeyValue5",
+							"KeyName": "Total Price",
+							"Visible": true
 						}
 					],
 					"MaxItemCount": 1,
 					"_Type": "Section.Type.KeyValue",
+					"Target": {
+						"Service": "/zcarcare/Services/zcarcare.service",
+						"EntitySet": "ZC_OFF_CARCARE",
+						"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js"
+					},
 					"_Name": "SectionKeyValue0",
 					"Visible": true,
 					"EmptySection": {

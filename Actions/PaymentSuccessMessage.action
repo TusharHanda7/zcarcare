@@ -1,0 +1,10 @@
+{
+	"_Type": "Action.Type.Message",
+	"ActionResult": {
+		"_Name": "PaymentSuccessMessage"
+	},
+	"OnSuccess": "/zcarcare/Actions/navToMain.action",
+	"Message": "Payment completed successfully",
+	"Title": "Payment",
+	"OKCaption": "OK"
+}

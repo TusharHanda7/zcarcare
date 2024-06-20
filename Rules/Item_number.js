@@ -8,11 +8,12 @@ export default function Item_number(clientAPI) {
     let ItemNoZeroes = ItemNo.toString().padStart(desiredLength, '0');
     //var FCSite2 = clientAPI.evaluateTargetPath('#Page:DisplayWashTabPage/#Control:SectionKeyValue0');
     //var FCSite2 = clientAPI.evaluateTargetPath('#Page:-Previous');
-    var FCSite = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPSite/#Value');
-    var FCPlateCode = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPPlateCode/#Value');
-    var FCPlateNum = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPPlateNum/#Value');
-    var FCMobile = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPMobile/#Value');
-    var FCDate = clientAPI.evaluateTargetPath('#Page:PaymentCopy/#Control:FCPDate/#Value');
+    var FCSite = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCSite/#Value');
+    var FCPlateCode = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCPlateCode/#Value');
+    var FCPlateNum = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCPlateNum/#Value');
+    var FCMobile = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCMobile/#Value');
+    var FCDate = clientAPI.evaluateTargetPath('#Page:CreateOrder/#Control:FCDate/#Value');
+    var FCDate = FCDate.toLocaleDateString("fr-CA", {year:"numeric", month: "2-digit", day:"2-digit"});
     var FCKey = `ZC_OFF_CARCARE(Site='${FCSite}',PlateNum='${FCPlateNum}',PlateCode='${FCPlateCode}',MobileNum='${FCMobile}',CreatedOn=${FCDate})`;;
     //const currentPlateNum = pageproxy.binding['@odata.readLink'];
     //const currentPlateNum = 'Site='

@@ -1,0 +1,27 @@
+{
+	"_Type": "Action.Type.ODataService.UpdateEntity",
+	"ActionResult": {
+		"_Name": "odataPaymentCopy"
+	},
+	"OnFailure": {
+		"Name": "/zcarcare/Actions/GenericMessageBox.action",
+		"Properties": {
+			"Message": "Payment failed",
+			"Title": "Payment",
+			"OKCaption": "OK"
+		}
+	},
+	"OnSuccess": "/zcarcare/Actions/PaymentSuccessMessage.action",
+	"Target": {
+		"Service": "/zcarcare/Services/zcarcare.service",
+		"EntitySet": "ZC_OFF_CARCARE",
+		"QueryOptions": "/zcarcare/Rules/ReadHeaderQuery.js",
+		"ReadLink": "{@odata.readLink}"
+	},
+	"Properties": {
+		"CashAmount": "#Page:PaymentCopy/#Control:FCPCash/#Value",
+		"CardAmount": "#Page:PaymentCopy/#Control:FCPCard/#Value",
+		"CardAuthCode": "#Page:PaymentCopy/#Control:FCPAuthCode/#Value",
+		"Currency": "INR"
+	}
+}
